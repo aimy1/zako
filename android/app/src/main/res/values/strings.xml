@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">雑魚🐟雑魚！</string>
+    <string name="title_activity_main">雑魚🐟雑魚！</string>
+    <string name="package_name">com.zako.game</string>
+    <string name="custom_url_scheme">com.zako.game</string>
+</resources>

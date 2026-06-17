@@ -94,15 +94,15 @@ export default function App() {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#39C5BB] rounded-full blur-[120px] opacity-10"></div>
 
         {!showSettings && !showMultiplayer ? (
-          <div className="z-10 flex flex-col items-center text-center space-y-8 bg-white p-12 rounded-[40px] w-full max-w-md shadow-2xl border-4 border-[#39C5BB]">
+          <div className="z-10 flex flex-col items-center text-center space-y-6 sm:space-y-8 bg-white p-6 sm:p-12 rounded-[30px] sm:rounded-[40px] w-full max-w-md mx-4 shadow-2xl border-4 border-[#39C5BB]">
             <h1 className="flex items-center justify-center">
-              <img src={logoImg} alt="UNO" className="w-64 md:w-80 h-auto" />
+              <img src={logoImg} alt="雑魚🐟雑魚！" className="w-40 sm:w-64 md:w-80 h-auto" />
             </h1>
 
-            <div className="flex flex-col w-full gap-4 pt-8">
+            <div className="flex flex-col w-full gap-3 sm:gap-4 pt-4 sm:pt-8">
               <button
                 onClick={handleStartGame}
-                className="w-full py-4 rounded-2xl bg-gradient-to-r from-[#39C5BB] to-[#00D4AA] text-white font-black text-xl tracking-wide shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                className="w-full py-3 sm:py-4 rounded-2xl bg-gradient-to-r from-[#39C5BB] to-[#00D4AA] text-white font-black text-lg sm:text-xl tracking-wide shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
                 style={{fontFamily: 'var(--font-display)'}}
               >
                 开始游戏
@@ -112,10 +112,10 @@ export default function App() {
                   playClick();
                   setShowMultiplayer(true);
                 }}
-                className="w-full py-4 rounded-2xl bg-gradient-to-r from-[#FF69B4] to-[#FF1493] text-white font-black text-xl tracking-wide shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+                className="w-full py-3 sm:py-4 rounded-2xl bg-gradient-to-r from-[#FF69B4] to-[#FF1493] text-white font-black text-lg sm:text-xl tracking-wide shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
                 style={{fontFamily: 'var(--font-display)'}}
               >
-                <Users className="w-6 h-6" /> 多人对战
+                <Users className="w-5 h-5 sm:w-6 sm:h-6" /> 多人对战
               </button>
               <button
                 onClick={() => {
@@ -128,13 +128,13 @@ export default function App() {
               </button>
             </div>
 
-            <div className="pt-4 text-gray-400 text-sm font-bold">
+            <div className="pt-2 sm:pt-4 text-gray-400 text-xs sm:text-sm font-bold">
               1 名玩家 vs 3 个AI对手
             </div>
           </div>
         ) : showSettings ? (
-          <div className="z-10 flex flex-col items-center space-y-6 bg-white p-8 rounded-[40px] w-full max-w-md shadow-2xl border-4 border-[#39C5BB]">
-            <h2 className="text-3xl font-black tracking-wider text-[#FF1493]" style={{fontFamily: 'var(--font-display)'}}>
+          <div className="z-10 flex flex-col items-center space-y-4 sm:space-y-6 bg-white p-6 sm:p-8 rounded-[30px] sm:rounded-[40px] w-full max-w-md mx-4 shadow-2xl border-4 border-[#39C5BB]">
+            <h2 className="text-2xl sm:text-3xl font-black tracking-wider text-[#FF1493]" style={{fontFamily: 'var(--font-display)'}}>
               系统设置
             </h2>
 
@@ -156,7 +156,7 @@ export default function App() {
                 <label className="block text-sm font-bold text-gray-600 mb-2">
                   头像
                 </label>
-                <div className="flex gap-3 justify-center flex-wrap">
+                <div className="flex gap-2 sm:gap-3 justify-center flex-wrap">
                   {AVATARS.map((ava, index) => (
                     <button
                       key={index}
@@ -164,7 +164,7 @@ export default function App() {
                         playSwoosh();
                         setPlayerAvatar(ava);
                       }}
-                      className={`w-14 h-14 rounded-2xl overflow-hidden transition-all ${playerAvatar === ava ? "border-2 border-[#39C5BB] scale-110 shadow-md" : "border-2 border-gray-200 hover:border-gray-300 hover:scale-105"}`}
+                      className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl overflow-hidden transition-all ${playerAvatar === ava ? "border-2 border-[#39C5BB] scale-110 shadow-md" : "border-2 border-gray-200 hover:border-gray-300 hover:scale-105"}`}
                     >
                       <img src={ava} alt={`头像${index + 1}`} className="w-full h-full object-cover" />
                     </button>
@@ -200,8 +200,8 @@ export default function App() {
             </button>
           </div>
         ) : (
-          <div className="z-10 flex flex-col items-center space-y-6 bg-white p-8 rounded-[40px] w-full max-w-lg shadow-2xl border-4 border-[#39C5BB] max-h-[80vh] overflow-y-auto">
-            <h2 className="text-3xl font-black tracking-wider text-[#FF1493]" style={{fontFamily: 'var(--font-display)'}}>
+          <div className="z-10 flex flex-col items-center space-y-4 sm:space-y-6 bg-white p-6 sm:p-8 rounded-[30px] sm:rounded-[40px] w-full max-w-lg mx-4 shadow-2xl border-4 border-[#39C5BB] max-h-[85vh] sm:max-h-[80vh] overflow-y-auto">
+            <h2 className="text-2xl sm:text-3xl font-black tracking-wider text-[#FF1493]" style={{fontFamily: 'var(--font-display)'}}>
               多人对战
             </h2>
 
@@ -228,14 +228,14 @@ export default function App() {
                 {network.status === 'connected' ? (
                   <button
                     onClick={() => { playClick(); network.disconnect(); }}
-                    className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#39C5BB] to-[#00D4AA] text-white text-sm font-bold shadow-md hover:shadow-lg hover:scale-105 transition-all"
+                    className="px-3 sm:px-4 py-2 rounded-xl bg-gradient-to-r from-[#39C5BB] to-[#00D4AA] text-white text-sm font-bold shadow-md hover:shadow-lg hover:scale-105 transition-all"
                   >
                     断开
                   </button>
                 ) : (
                   <button
                     onClick={() => { playClick(); network.connect(serverUrl); }}
-                    className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#6B5B95] to-[#9B8EC4] text-white text-sm font-bold shadow-md hover:shadow-lg hover:scale-105 transition-all"
+                    className="px-3 sm:px-4 py-2 rounded-xl bg-gradient-to-r from-[#6B5B95] to-[#9B8EC4] text-white text-sm font-bold shadow-md hover:shadow-lg hover:scale-105 transition-all"
                   >
                     连接
                   </button>
@@ -253,7 +253,7 @@ export default function App() {
             {network.status === 'connected' && !network.roomId && (
               <>
                 <div className="w-full flex items-center justify-between">
-                  <h3 className="text-lg font-black text-gray-800" style={{fontFamily: 'var(--font-display)'}}>可用房间</h3>
+                  <h3 className="text-base sm:text-lg font-black text-gray-800" style={{fontFamily: 'var(--font-display)'}}>可用房间</h3>
                   <button
                     onClick={() => { playClick(); network.refreshRooms(); }}
                     className="p-2 rounded-xl bg-gray-100 border-2 border-gray-200 text-gray-600 hover:bg-gray-200 transition-all"
@@ -262,7 +262,7 @@ export default function App() {
                   </button>
                 </div>
 
-                <div className="w-full space-y-2 max-h-48 overflow-y-auto">
+                <div className="w-full space-y-2 max-h-40 sm:max-h-48 overflow-y-auto">
                   {network.rooms.length === 0 ? (
                     <div className="text-center text-gray-400 text-sm py-4 font-bold">暂无房间</div>
                   ) : (
@@ -271,8 +271,8 @@ export default function App() {
                         key={room.id}
                         className="flex items-center justify-between p-3 rounded-xl bg-gray-50 border-2 border-gray-200 hover:border-[#39C5BB] transition-all"
                       >
-                        <div>
-                          <div className="text-sm font-bold text-gray-800">{room.name}</div>
+                        <div className="min-w-0 flex-1">
+                          <div className="text-sm font-bold text-gray-800 truncate">{room.name}</div>
                           <div className="text-xs text-gray-500 font-bold">
                             {room.playerCount}/{room.maxPlayers} 玩家 · {room.hostName}
                           </div>
@@ -283,7 +283,7 @@ export default function App() {
                             network.joinRoom(room.id, playerName, playerAvatar);
                           }}
                           disabled={room.inGame || room.playerCount >= room.maxPlayers}
-                          className="px-3 py-1.5 rounded-xl bg-gradient-to-r from-[#FF69B4] to-[#FF1493] text-white text-xs font-bold shadow-md hover:shadow-lg hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="px-3 py-1.5 rounded-xl bg-gradient-to-r from-[#FF69B4] to-[#FF1493] text-white text-xs font-bold shadow-md hover:shadow-lg hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed ml-2 flex-shrink-0"
                         >
                           {room.inGame ? '游戏中' : '加入'}
                         </button>
@@ -329,7 +329,7 @@ export default function App() {
                   <div className="flex items-center justify-between mb-3">
                     <div>
                       <div className="text-xs text-gray-500 font-bold">房间号</div>
-                      <div className="text-2xl font-black text-[#FF1493] tracking-widest" style={{fontFamily: 'var(--font-display)'}}>
+                      <div className="text-xl sm:text-2xl font-black text-[#FF1493] tracking-widest" style={{fontFamily: 'var(--font-display)'}}>
                         {network.roomId}
                       </div>
                     </div>
@@ -440,7 +440,7 @@ export default function App() {
           >
             <motion.div 
               initial={{ scale: 0.9, y: 20 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.9, y: 20 }}
-              className="w-full max-w-sm bg-white border-4 border-[#39C5BB] p-8 rounded-[40px] shadow-2xl flex flex-col items-center space-y-6"
+              className="w-full max-w-sm mx-4 bg-white border-4 border-[#39C5BB] p-6 sm:p-8 rounded-[30px] sm:rounded-[40px] shadow-2xl flex flex-col items-center space-y-4 sm:space-y-6"
             >
               <h2 className="text-3xl font-black tracking-wider text-[#FF1493]" style={{fontFamily: 'var(--font-display)'}}>暂停</h2>
 
