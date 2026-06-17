@@ -1,0 +1,8 @@
+{
+  "name": "Uno: Cybernetic Edition",
+  "description": "A high-quality sci-fi glassmorphism UNO clone featuring standard rules, AI opponents, and polished animations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "name": "zako-game",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "雑魚🐟雑魚！(●▼●;)",
+  "author": "雑魚 Team",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite --port=3000 --host=0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "tsx server.ts",
+    "clean": "rm -rf dist server.js",
+    "lint": "tsc --noEmit",
+    "electron:dev": "vite build && electron .",
+    "electron:build": "vite build && electron-builder --win --x64",
+    "dist": "npm run build && electron-builder --win --x64"
+  },
+  "build": {
+    "appId": "com.uno.cybernetic",
+    "productName": "雑魚🐟雑魚！(●▼●;)",
+    "directories": {
+      "output": "C:\\Users\\win\\Desktop\\Zako-Release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "assets/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "assets/.aistudio/logo.png"
+    },
+    "portable": {
+      "artifactName": "Zako-${version}-Portable.exe"
+    }
+  },
+  "dependencies": {
+    "@google/genai": "^2.4.0",
+    "@tailwindcss/vite": "^4.1.14",
+    "@vitejs/plugin-react": "^5.0.4",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "lucide-react": "^0.546.0",
+    "motion": "^12.23.24",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1",
+    "vite": "^6.2.3",
+    "ws": "^8.21.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.14.0",
+    "@types/ws": "^8.18.1",
+    "autoprefixer": "^10.4.21",
+    "electron": "^40.9.3",
+    "electron-builder": "^26.15.3",
+    "esbuild": "^0.25.0",
+    "tailwindcss": "^4.1.14",
+    "tsx": "^4.21.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.3"
+  }
+}
